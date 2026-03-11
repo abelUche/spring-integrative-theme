@@ -1,0 +1,119 @@
+
+:root {
+  --green-dark: #4B695F;
+  --green-mid: #638077;
+  --green-light: #83978F;
+
+  --brown-main: #B88A63;
+  --brown-light: #E6D9CE;
+
+  --text-dark: #231F20;
+  --white: #ffffff;
+
+  --font-body: "Century Gothic", system-ui, sans-serif;
+  --font-display: "Cinzel Decorative", serif;
+}
+
+body.dr-ali-page {
+  margin: 0;
+  background: linear-gradient(79deg, var(--green-mid), var(--white));
+  font-family: var(--font-body);
+  color: var(--text-dark);
+}
+
+.dr-ali-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+}
+
+.dr-ali-hero {
+  max-width: 680px;
+  text-align: center;
+}
+
+.logo img {
+  width: 250px;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.eyebrow {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--green-dark);
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-family: var(--font-display);
+  font-size: 2.6rem;
+  font-weight: 400;
+  margin-bottom: 1.2rem;
+}
+
+.subhead {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 2.5rem;
+}
+
+.optin form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.optin input {
+  padding: 0.9rem 1rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.optin button {
+  padding: 0.9rem 1rem;
+  border-radius: 10px;
+  border: none;
+  background: var(--green-dark);
+  color: var(--white);
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.optin button:hover {
+  background: var(--brown-main);
+}
+
+.reassurance {
+  margin-top: 1.2rem;
+  font-size: 0.75rem;
+  color: #000;
+}
+.fade-in {
+  animation: fadeInUp 1.2s ease-out both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.dr-ali-page .subhead {
+  margin-bottom: 1.6rem;
+}
+
+.dr-ali-page .reassurance {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #555;
+}
