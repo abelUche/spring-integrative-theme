@@ -209,63 +209,218 @@ font-family:'Cinzel Decorative', serif;
 .two-col.reverse {
   grid-template-columns: 1fr 1fr;
 }
-.approach-header{
-text-align:center;
-margin-bottom:60px;
+/* ========================================
+APPROACH SECTION
+Why I See Menopause Differently
+======================================== */
+
+.approach{
+background:#F5F3EF;
+position:relative;
 }
 
+.approach-header{
+text-align:center;
+margin-bottom:70px;
+position:relative;
+}
+
+/* decorative lines */
+
 .approach-header h2{
-font-family:'Cinzel Decorative', serif;
-font-size:40px;
-margin-bottom:10px;
+font-family:var(--font-display);
+font-size:44px;
+color:#B28A63;
+letter-spacing:1px;
+margin-bottom:18px;
+position:relative;
+display:inline-block;
+}
+
+.approach-header h2:before,
+.approach-header h2:after{
+content:"";
+position:absolute;
+top:50%;
+width:120px;
+height:2px;
+background:#DCC8B5;
+}
+
+.approach-header h2:before{
+right:100%;
+margin-right:30px;
+}
+
+.approach-header h2:after{
+left:100%;
+margin-left:30px;
 }
 
 .approach-sub{
-color:var(--accent);
-font-weight:600;
+font-size:28px;
+font-weight:700;
+color:#7D8F83;
 letter-spacing:1px;
+margin-top:10px;
 }
+
+.approach-image{
+position:relative;
+}
+
+/* grid */
+
 .approach-grid{
 display:grid;
 grid-template-columns:1.1fr 1fr;
 gap:70px;
 align-items:center;
+position:relative;
 }
+
+/* text */
+
+.approach-text{
+max-width:520px;
+}
+
 .approach-text p{
-margin-bottom:18px;
-line-height:1.7;
+margin-bottom:20px;
+line-height:1.8;
+font-size:18px;
+color:#2F3C44;
 }
 
 .approach-highlight{
-font-weight:600;
+font-weight:700;
+font-size:19px;
 }
+
+/* image */
+
 .approach-image img{
 width:100%;
-border-radius:15px;
+border-radius:18px;
 display:block;
+order:-1;
 }
+
+/* quote box */
+
 .approach-quote{
-max-width:520px;
-margin:60px auto 0;
-background:var(--accent);
+position:absolute;
+bottom:-60px;
+right:140px;
+
+max-width:420px;
+
+background:#B8895F;
 color:white;
-padding:28px 36px;
-border-radius:12px;
+
+padding:30px 36px;
+
+border-radius:14px;
+
 text-align:center;
-font-size:20px;
+
+font-size:22px;
 line-height:1.5;
+
+box-shadow:0 10px 30px rgba(0,0,0,0.15);
 }
-@media (max-width:768px){
+
+/* responsive */
+
+@media (max-width:900px){
 
 .approach-grid{
 grid-template-columns:1fr;
+gap:40px;
 }
 
 .approach-image{
 order:-1;
 }
 
+.approach-header h2:before,
+.approach-header h2:after{
+display:none;
 }
+
+.approach-sub{
+font-size:22px;
+}
+
+.approach-quote{
+font-size:20px;
+position:relative;
+bottom:auto;
+right:auto;
+margin:40px auto 0;
+}
+}
+/* SERVICES SECTION */
+
+.services{
+background:var(--green);
+color:white;
+text-align:center;
+}
+
+.services-header{
+max-width:720px;
+margin:0 auto 60px;
+}
+
+.services-header h2{
+font-family:var(--font-display);
+font-size:38px;
+margin-bottom:16px;
+color:white;
+}
+
+.services-sub{
+font-size:18px;
+opacity:0.9;
+}
+
+.services-cards{
+display:flex;
+flex-direction:column;
+gap:40px;
+max-width:820px;
+margin:auto;
+}
+
+/* card */
+
+.service-card{
+background:white;
+color:var(--dark);
+padding:40px 45px;
+border-radius:10px;
+text-align:center;
+}
+
+.service-card h3{
+font-size:22px;
+margin-bottom:16px;
+color:var(--accent);
+}
+
+.service-card p{
+margin-bottom:22px;
+line-height:1.7;
+}
+
+/* button */
+
+.service-card .btn-primary{
+display:inline-block;
+margin-top:10px;
+}
+
 .home-hero{
 position:relative;
 background:url('../img/hero.jpg') center/cover no-repeat;

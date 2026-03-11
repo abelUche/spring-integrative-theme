@@ -4,8 +4,7 @@
 
 <div class="approach-header">
 
-<h2>Why I See Menopause Differently</h2>
-
+<h2 class="approach-title">Why I See Menopause Differently</h2>
 <p class="approach-sub">
 MIDLIFE ISN'T A BREAKDOWN. IT'S AN AWAKENING.
 </p>

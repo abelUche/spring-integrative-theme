@@ -9,6 +9,7 @@ get_header();
 <?php get_template_part('template-parts/intro-green'); ?>
 <?php get_template_part('template-parts/science'); ?>
 <?php get_template_part('template-parts/approach'); ?>
+<?php get_template_part('template-parts/services');?>
 <?php get_template_part('template-parts/about'); ?>
 <?php get_template_part('template-parts/programs'); ?>
 <?php get_template_part('template-parts/testimonials'); ?>
