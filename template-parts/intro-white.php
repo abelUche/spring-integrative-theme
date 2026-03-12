@@ -2,30 +2,44 @@
 
 <div class="container intro-inner">
 
-<p>
-If you’re moving through perimenopause or menopause and feel like your body,
-emotions, or priorities are shifting, you’re not broken—and you’re not alone.
-</p>
+<div class="intro-content">
 
-<p>
-This stage of life is not a failure or an ending. It’s a transition into deeper
-wisdom, truth, and self-trust.
-</p>
+<?php the_field('intro_white_text'); ?>
 
-<p>
-I’m here to help you listen to what your body is asking for—and respond with care
-that honors both your biology and your becoming.
-</p>
+</div>
 
 <div class="intro-actions">
 
-<a href="#" class="btn-primary">
-Begin Your Journey
+<?php 
+$primary = get_field('intro_white_primary_button');
+if( $primary ):
+?>
+
+<a href="<?php echo esc_url($primary['url']); ?>" 
+class="btn-primary"
+target="<?php echo esc_attr($primary['target']); ?>">
+
+<?php echo esc_html($primary['title']); ?>
+
 </a>
 
-<a href="#" class="btn-secondary">
-Receive the Free Menopause Toolkit
+<?php endif; ?>
+
+
+<?php 
+$secondary = get_field('intro_white_secondary_button');
+if( $secondary ):
+?>
+
+<a href="<?php echo esc_url($secondary['url']); ?>" 
+class="btn-secondary"
+target="<?php echo esc_attr($secondary['target']); ?>">
+
+<?php echo esc_html($secondary['title']); ?>
+
 </a>
+
+<?php endif; ?>
 
 </div>
 

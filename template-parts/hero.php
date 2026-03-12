@@ -4,17 +4,10 @@
 
   <div class="container hero-content">
 
-    <h1>
-      Menopause support that blends hormone science,
-      spiritual wisdom, and
-      <span class="brush-underline">personalized</span>
-      care.
-    </h1>
+    <h1><?php the_field('hero_title'); ?></h1>
 
     <p class="hero-sub">
-      Whole-person menopause care blending hormone science,
-      spiritual insight, and deeply personalized support—so you
-      can feel grounded, clear, and at home in your body again.
+    <?php the_field('hero_text'); ?>
     </p>
 
   </div>
