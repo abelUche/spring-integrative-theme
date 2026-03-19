@@ -1,23 +1,21 @@
 <?php
 /*
-Template Name: Home
+Template Name: Blog display
 */
 
 get_header();
 
 $sections = [
-  'hero',
-  'intro-white',
-  'intro-green',
-  'science',
+  'hero-blog',
+  'blog-intro-white',
+  'blog-preview-blog',
+  'blog-science',
+  'spotlight-blog',
   'approach',
-  'services',
+  'hero-blog',
+  'approach',
   'testimonials',
-  'free-download',
-  'discovery-call',
-  'blog-preview',
-  'instagram',
-  'note'
+  'note',
 ];
 
 foreach($sections as $section){

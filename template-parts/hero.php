@@ -1,4 +1,9 @@
-<section class="home-hero">
+<?php 
+$hero_bg = get_field('hero_bg') ?: get_stylesheet_directory_uri() . '/assets/img/hero.jpg';
+?>
+
+<section class="home-hero" 
+  style="background: url('<?php echo esc_url($hero_bg); ?>') center/cover no-repeat;">
 
   <div class="hero-overlay"></div>
 

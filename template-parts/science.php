@@ -4,40 +4,43 @@
 
 <div class="science-header">
 
-<h2>
-Clinical Expertise for a Sacred Season of Change
-</h2>
+<?php if(get_field('science_title')): ?>
+<h2><?php the_field('science_title'); ?></h2>
+<?php endif; ?>
 
+<?php if(get_field('science_subtitle')): ?>
 <p class="science-sub">
-Where evidence-based hormone care meets intuition,
-wisdom, and whole-person healing.
+  <?php the_field('science_subtitle'); ?>
 </p>
+<?php endif; ?>
 
 </div>
 
 <div class="science-grid">
 
 <div class="science-image">
-
-<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/dr-ali.jpg" alt="Dr Ali">
-
+  <?php if(get_field('science_image')): ?>
+    <img src="<?php the_field('science_image'); ?>" alt="<?php the_field('science_image_alt'); ?>">
+  <?php endif; ?>
 </div>
 
 <div class="science-text">
 
-<h3>I'm Dr. Alisun Bonville,</h3>
+<?php if(get_field('science_heading')): ?>
+<h3><?php the_field('science_heading'); ?></h3>
+<?php endif; ?>
 
-<p>
-a board-certified naturopathic endocrinologist specializing
-in menopause and midlife hormone health. My work bridges
-modern diagnostic testing and treatment with a spiritual,
-nervous-system–informed approach to healing.
+<?php if(get_field('science_paragraph_1')): ?>
+<p class="text-primary">
+  <?php the_field('science_paragraph_1'); ?>
 </p>
+<?php endif; ?>
 
-<p>
-This is care that looks beyond symptom suppression and
-instead supports your body, mind, and inner wisdom—together.
+<?php if(get_field('science_paragraph_2')): ?>
+<p class="text-secondary">
+  <?php the_field('science_paragraph_2'); ?>
 </p>
+<?php endif; ?>
 
 </div>
 

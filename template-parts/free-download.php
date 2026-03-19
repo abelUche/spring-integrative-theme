@@ -6,7 +6,9 @@
 
 <div class="divider"></div>
 
-<h2>[NAME OF FREE DOWNLOAD HERE]</h2>
+<?php if(get_field('download_title')): ?>
+  <h2><?php the_field('download_title'); ?></h2>
+<?php endif; ?>
 
 <div class="divider"></div>
 
@@ -14,22 +16,35 @@
 
 
 <p class="download-sub">
-<span class="highlight-circle">A free resource</span>
-for women who want clarity without overwhelm.
+
+<?php if(get_field('download_badge_text')): ?>
+  <span class="highlight-circle">
+    <?php the_field('download_badge_text'); ?>
+  </span>
+<?php endif; ?>
+
+<?php if(get_field('download_subtitle')): ?>
+  <?php the_field('download_subtitle'); ?>
+<?php endif; ?>
+
 </p>
 
 
-<p class="download-text">
-Download the <strong>[NAME OF RESOURCE]</strong> to better understand
-your symptoms, your hormones, and the first supportive steps that
-often make the biggest difference. This is a calm, grounding starting
-point for you to feel into. No pressure, no fixing required.
-</p>
+<?php if(get_field('download_text')): ?>
+  <p class="download-text">
+    <?php the_field('download_text'); ?>
+  </p>
+<?php endif; ?>
 
 
-<a href="#" class="btn-download">
-DOWNLOAD THE FREE TOOLKIT
-</a>
+<?php 
+$file = get_field('download_file');
+if($file): 
+?>
+  <a href="<?php echo esc_url($file); ?>" class="btn-download" download>
+    <?php echo get_field('download_button_text') ?: 'Download'; ?>
+  </a>
+<?php endif; ?>
 
 </div>
 

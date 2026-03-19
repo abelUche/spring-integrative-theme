@@ -4,10 +4,17 @@
 
 <div class="approach-header">
 
-<h2 class="approach-title">Why I See Menopause Differently</h2>
+<?php if(get_field('approach_title')): ?>
+<h2 class="approach-title">
+  <?php the_field('approach_title'); ?>
+</h2>
+<?php endif; ?>
+
+<?php if(get_field('approach_subtitle')): ?>
 <p class="approach-sub">
-MIDLIFE ISN'T A BREAKDOWN. IT'S AN AWAKENING.
+  <?php echo nl2br(get_field('approach_subtitle')); ?>
 </p>
+<?php endif; ?>
 
 </div>
 
@@ -16,31 +23,31 @@ MIDLIFE ISN'T A BREAKDOWN. IT'S AN AWAKENING.
 
 <div class="approach-text">
 
+<?php if(get_field('approach_paragraph_1')): ?>
 <p>
-In my practice, I’ve worked with countless women who were
-told their labs were “normal,” yet felt anything but.
-Women who were exhausted from powering through,
-over-giving, and ignoring their own needs.
+  <?php the_field('approach_paragraph_1'); ?>
 </p>
+<?php endif; ?>
 
+<?php if(get_field('approach_highlight')): ?>
 <p class="approach-highlight">
-I believe menopause is one of the most profound
-initiations of a woman's life.
+  <?php the_field('approach_highlight'); ?>
 </p>
+<?php endif; ?>
 
+<?php if(get_field('approach_paragraph_2')): ?>
 <p>
-A time when the body becomes honest. When old coping
-strategies stop working. When you’re invited to live
-more aligned with your truth, energy, and values.
+  <?php the_field('approach_paragraph_2'); ?>
 </p>
+<?php endif; ?>
 
 </div>
 
 
 <div class="approach-image">
-
-<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/dr-ali-2.jpg" alt="Dr Ali">
-
+<?php if(get_field('approach_image')): ?>
+  <img src="<?php the_field('approach_image'); ?>" alt="<?php the_field('approach_image_alt'); ?>">
+<?php endif; ?>
 </div>
 
 </div>
@@ -48,11 +55,11 @@ more aligned with your truth, energy, and values.
 
 <div class="approach-quote">
 
+<?php if(get_field('approach_quote')): ?>
 <p>
-My role is not to override your body—
-but to help you understand it,
-support it, and trust it again.
+  <?php the_field('approach_quote'); ?>
 </p>
+<?php endif; ?>
 
 </div>
 

@@ -4,60 +4,50 @@
 
 <div class="services-header">
 
-<h2>Ways We Can Walk This Transition Together</h2>
+<?php if(get_field('services_title')): ?>
+<h2><?php the_field('services_title'); ?></h2>
+<?php endif; ?>
 
+<?php if(get_field('services_subtitle')): ?>
 <p class="services-sub">
-Support and honor your hormones, your nervous system, and your whole being.
+  <?php the_field('services_subtitle'); ?>
 </p>
+<?php endif; ?>
 
 </div>
 
 
 <div class="services-cards">
 
-<div class="service-card">
+<?php if(have_rows('services_list')): ?>
+  <?php while(have_rows('services_list')): the_row(); ?>
 
-<h3>Transformational Hormone Support</h3>
+    <div class="service-card">
 
-<p>
-A comprehensive one-on-one experience designed to deeply support
-your hormonal health, nervous system regulation, and whole-body
-wellbeing through personalized testing, care, and guidance.
-</p>
+      <h3><?php the_sub_field('service_title'); ?></h3>
 
-<a href="#" class="btn-primary">Explore Program</a>
+      <?php if(get_sub_field('service_text_1')): ?>
+      <p><?php the_sub_field('service_text_1'); ?></p>
+      <?php endif; ?>
 
-</div>
+      <?php if(get_sub_field('service_text_2')): ?>
+      <p><?php the_sub_field('service_text_2'); ?></p>
+      <?php endif; ?>
 
+      <?php if(get_sub_field('service_text_3')): ?>
+      <p><?php the_sub_field('service_text_3'); ?></p>
+      <?php endif; ?>
 
-<div class="service-card">
+      <?php if(get_sub_field('service_button_link')): ?>
+      <a href="<?php the_sub_field('service_button_link'); ?>" class="btn-primary">
+        <?php the_sub_field('service_button_text'); ?>
+      </a>
+      <?php endif; ?>
 
-<h3>Group Hormone Mentorship</h3>
+    </div>
 
-<p>
-A guided group container where women walk the menopause
-transition together while receiving expert hormone education,
-nervous-system support, and community.
-</p>
-
-<a href="#" class="btn-primary">Join the Circle</a>
-
-</div>
-
-
-<div class="service-card">
-
-<h3>Self-Paced Hormone Learning Program</h3>
-
-<p>
-A flexible learning experience designed to help you understand
-your hormones, decode symptoms, and support your body
-with practical tools and wisdom.
-</p>
-
-<a href="#" class="btn-primary">Start Learning</a>
-
-</div>
+  <?php endwhile; ?>
+<?php endif; ?>
 
 </div>
 

@@ -2,25 +2,7 @@
 
 <div class="container">
 
-<div class="blog-intro">
-
-<h2>Guidance for the Menopause Journey</h2>
-
-<p class="blog-sub">
-Articles on hormones, boundaries, embodiment,
-and the sacred intelligence of the female body.
-</p>
-
-<p class="blog-desc">
-Explore reflections and education on spiritual menopause,
-mindset medicine, hormone testing, and practical tools
-to support your transition with clarity and compassion.
-</p>
-
-</div>
-
-
-<h3 class="blog-heading">Recent Blog Posts</h3>
+<h3 class="blog-heading-blog">Recent Blog Posts</h3>
 
 
 <div class="blog-grid">
