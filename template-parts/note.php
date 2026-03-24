@@ -2,21 +2,18 @@
 
 <div class="container">
 
+<?php if(get_field('note_title')): ?>
 <h2 class="note-title">
-A Note of Care
+  <?php the_field('note_title'); ?>
 </h2>
+<?php endif; ?>
 
-<p class="note-text">
-The information shared here is for educational purposes only and is not
-a substitute for personalized medical advice, diagnosis, or treatment.
-Always consult with your healthcare provider before making changes
-to your health plan.
-</p>
 
+<?php if(get_field('note_text')): ?>
 <p class="note-text">
-This space is designed to support, inform, and empower you—but your
-care should always be tailored to your unique body and needs.
+  <?php the_field('note_text'); ?>
 </p>
+<?php endif; ?>
 
 </div>
 

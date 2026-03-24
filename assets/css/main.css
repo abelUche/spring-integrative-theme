@@ -22,7 +22,7 @@
 --white:#ffffff;
 --gradient-green: linear-gradient(
     to bottom,
-    #648077 0%,
+    #648077 -40%,
     #64807700 100%
   );
 --gradient-brown: linear-gradient(
@@ -40,6 +40,7 @@ a:focus {
 /* spacing */
 
 --section-padding:50px;
+--section-mobile-padding:30px;
 
 /* typography */
 
@@ -50,6 +51,12 @@ a:focus {
 
 }
 
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}
+
 body{
   font-family: var(--font-body);
   color: var(--dark);
@@ -58,14 +65,22 @@ body{
 .page-template .ast-container {
   display: block;
 }
-.container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 0 20px;
-}
+
 
 section {
   padding: var(--section-padding) 0;
+}
+
+@media (max-width:768px){
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 50px;
+}
+
+section {
+  padding: var(--section-mobile-padding) 0;
+}
 }
 
 .announcement-bar{
@@ -191,15 +206,15 @@ font-family: var(--font-body);
 @media (max-width:768px){
 
 .home-hero{
-min-height:420px;
-padding:120px 0;
+min-height:0px;
+padding-top: 85px;
 }
 
 .home-hero h1{
-font-size:32px;
+font-size:17px;
 }
 .hero-sub{
-font-size:18px;
+font-size:9px;
 }
 
 }
@@ -247,6 +262,17 @@ padding:14px 26px;
 border-radius:4px;
 text-decoration:underline;
 }
+@media (max-width: 900px){
+.intro-white p{
+  font-size: 9px;
+}
+.btn-primary, .btn-secondary{
+  font-size: 10px;
+}
+.intro-actions{
+  gap: 2px;
+}
+}
 /* green section */
 
 .intro-green{
@@ -277,9 +303,21 @@ opacity:0.95;
 }
 
 .intro-green p{
-margin-bottom:18px;
+/* margin-bottom:18px; */
 line-height:1.7;
 font-size: 18px;
+}
+
+@media (max-width:900px){
+  .intro-green h2{
+    font-size: 17px ;
+  }
+  .intro-green p{
+    font-size: 8px;
+  }
+  .intro-green-sub{
+    font-size: 10px !important;
+  }
 }
 
 
@@ -342,8 +380,10 @@ margin:20px 0;
 }
 
 .intro-invitations p{
-font-weight:500;
+font-weight:900;
+margin-bottom: 0px;
 }
+
 h2{
 font-size:var(--heading-size);
 line-height:1.3;
@@ -376,11 +416,6 @@ section {
   width: 100%;
 }
 
-.container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 0 20px;
-}
 /* Science section */
 
 .home-science {
@@ -433,15 +468,32 @@ line-height:1.7;
 
 .science-grid{
 grid-template-columns:1fr;
+gap: 37px;
 }
 
 .science-header{
-margin-bottom:40px;
-}
-.science-header h2{
-font-family:'Cinzel Decorative', serif;
+margin-bottom: 17px;
 }
 
+.science-header h2{
+font-family: var(--font-display);
+font-size: 17px;
+}
+.science-image{
+  padding: 0px 40px;
+}
+
+.science-sub{
+  font-size: 10px;
+}
+.science-text h3{
+  font-size: 23px;
+  text-align: center;
+}
+.science-text p{
+  font-size:10px;
+  text-align: center;
+}
 }
 .two-col.reverse {
   grid-template-columns: 1fr 1fr;
@@ -475,24 +527,33 @@ position:relative;
 display:inline-block;
 }
 
-.approach-header h2:before,
-.approach-header h2:after{
-content:"";
-position:absolute;
-top:50%;
-width:120px;
-height:2px;
-background:#DCC8B5;
+.approach-header h2 {
+  position: relative;
+  display: inline-block;
 }
 
-.approach-header h2:before{
-right:100%;
-margin-right:30px;
+.approach-header h2::before,
+.approach-header h2::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 120px; /* adjust based on your SVG */
+  height: 20px; /* match your SVG height */
+
+  background: url('../img/right-arrow.svg') no-repeat center;
+  background-size: contain;
 }
 
-.approach-header h2:after{
-left:100%;
-margin-left:30px;
+.approach-header h2::before {
+  right: 100%;
+  margin-right: 30px;
+}
+
+.approach-header h2::after {
+  left: 100%;
+  margin-left: 30px;
 }
 
 .approach-sub{
@@ -578,28 +639,63 @@ box-shadow:0 10px 30px rgba(0,0,0,0.15);
 
 .approach-grid{
 grid-template-columns:1fr;
-gap:40px;
+gap:11px;
 }
 
-.approach-image{
-order:-1;
+.approach-header h2{
+  font-size: 23px;
+}
+.approach-header h2::before,
+.approach-header h2::after {
+  top: 27%;
+  width:67px ;
+}
+.approach-header h2::after {
+  left: 96%;
+  margin-left: 0px;
 }
 
-.approach-header h2:before,
-.approach-header h2:after{
-display:none;
+.approach-header h2::before {
+  right: 95%;
+  margin-right: 0px;
 }
 
 .approach-sub{
-font-size:22px;
+font-size:15px;
+text-align: center;
 }
 
 .approach-quote{
-font-size:20px;
+font-size: 20px;
+bottom: 90px;
+right: 151px;
+margin: 40px auto 0;
+padding: 20px 20px;
+width: 45%;
+transform: translateX(32px);
+}
+.approach-quote p{
+  font-size: 9px;
+  font-weight: 900;
+  margin-bottom: auto;
+}
+.approach-text{
+  padding-top: 17px;
+}
+.approach-text p{
+  font-size: 10px;
+  text-align: center;
+  
+}
+.approach-image{
 position:relative;
-bottom:auto;
-right:auto;
-margin:40px auto 0;
+text-align: -webkit-center;
+}
+
+.approach-image img{
+  width: 241px;
+  height: 264px;
+  text-align: --webkit;
 }
 }
 /* SERVICES SECTION */
@@ -670,6 +766,26 @@ display:inline-block;
 margin-top:10px;
 }
 
+@media (max-width:900px){
+.services-header h2{
+  font-size: 20px;
+}
+
+.services-sub{
+  font-size: 14px;
+}
+
+.service-card p{
+font-size: 10px;
+}
+.service-card h3{
+  font-size: 15px;
+}
+.service-card .btn-primary{
+  font-size: 10px;
+  padding: 10px ;
+}
+}
 /* ==============================
 TESTIMONIAL SECTION (FIGMA MATCH)
 ============================== */
@@ -790,6 +906,25 @@ TESTIMONIAL SECTION (FIGMA MATCH)
     width:90%;
   }
 
+  .testimonials-header h2{
+    font-size:23px;
+  }
+  .testimonials-sub{
+    font-size: 14px;
+  }
+  .testimonial-title{
+    font-size: 10px;
+  }
+  .testimonial-body{
+    font-size: 8px;
+  }
+  .testimonials-header{
+    margin:0px;
+  }
+  .testimonial-footer{
+    font-size: 8px;
+  }
+
 }
 
 .carousel-controls{
@@ -857,26 +992,49 @@ margin-bottom:30px;
 color:#1C2A39;
 }
 
-/* oval highlight */
-
-.highlight-circle{
-position:relative;
-display:inline-block;
+.desktop-break {
+  display: none;
 }
 
-.highlight-circle::after{
-content:"";
-position:absolute;
-left:-10px;
-right:-10px;
-top:-6px;
-bottom:-6px;
-
-border:2px solid #c89a6a;
-border-radius:50%;
-transform:rotate(-8deg);
+@media (min-width: 768px) {
+  .desktop-break {
+    display: block;
+  }
 }
 
+.highlight-circle {
+  position: relative;
+  display: inline-block;
+}
+
+
+/* FIRST OVAL */
+.highlight-circle::after {
+  content: "";
+  position: absolute;
+  left: -12px;
+  right: -12px;
+  top: -6px;
+  bottom: -6px;
+
+  border: 2px solid #c89a6a;
+  border-radius: 50%;
+  transform: rotate(1deg);
+}
+
+/* SECOND OVAL */
+.highlight-circle::before {
+  content: "";
+  position: absolute;
+  left: -14px;
+  right: -14px;
+  top: -8px;
+  bottom: -8px;
+
+  border: 2px solid #c89a6a;
+  border-radius: 50%;
+  transform: rotate(-4deg);
+}
 .download-text{
 max-width:700px;
 margin:0 auto 40px;
@@ -1038,6 +1196,19 @@ color:#123536;
 margin-top:20px;
 }
 
+@media (max-width:900px){
+  
+.blog-grid{
+grid-template-columns: 1fr;
+}
+.blog-intro h2, .blog-heading{
+  font-size: 20px;
+}
+.blog-desc, .blog-sub {
+  font-size: 13px;
+}
+
+}
 /* =========================
 INSTAGRAM SECTION
 ========================= */
@@ -1050,11 +1221,18 @@ text-align:center;
 .instagram-title{
 font-family:var(--font-display);
 font-size:36px;
+font-weight: 100;
 margin-bottom:10px;
 }
 
 .instagram-sub{
 margin-bottom:40px;
+font-weight: 900;
+}
+
+.instagram-desc{
+margin-bottom:40px;
+font-weight: 100;
 }
 
 .instagram-grid{
@@ -1135,8 +1313,8 @@ margin-top:5px;
 
 .footer-divider{
 width:1px;
-height:120px;
-background:rgba(0,0,0,0.2);
+height:200px;
+background:var(--white);
 }
 
 /* RIGHT SIDE */
@@ -1163,12 +1341,12 @@ opacity:0.7;
 flex-direction:column;
 gap:30px;
 }
-
-.footer-divider{
-width:60px;
-height:1px;
+.footer-right{
+  align-items: center;
 }
-
+.footer-divider{
+  display: none;
+}
 }
 
 /* Blog-display-page CSS */
@@ -1188,4 +1366,59 @@ font-size:36px;
 font-weight: 100;
 margin:20px 0 40px;
 color:#123536;
+}
+.blog-science-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+padding: 0 100px;
+}
+.blog-science-header h2 {
+font-size:23px;
+font-weight:900;
+margin-bottom:12px;
+text-align: center;
+font-family: var(--font-body);
+color: var(--dark);
+}
+
+.blog-science-header{
+  padding: 30px 220px;
+}
+.blog-science-text h3{
+font-size:23px;
+font-weight:900;
+margin-bottom:12px;
+font-family: var(--font-body);
+color: var(--dark);
+}
+
+.section-divider {
+  width: 100%;
+  text-align: center;
+  /* margin: 60px 0; */
+}
+
+.section-divider img {
+  max-width: 100%;
+  height: auto;
+}
+@media(max-width:990px){
+.blog-science-header{
+  padding: 0;
+}
+.blog-science-grid{
+  grid-template-columns: 1fr;
+  padding: 0;
+}
+.blog-science-text{
+  text-align: center;
+}
+ .arrow-icon {
+  width: 3px; /* adjust based on your design */
+  height: auto;
+  display: block;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+} 
 }

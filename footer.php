@@ -22,6 +22,9 @@
 
 <?php wp_footer(); ?>
 
+<!-- Calendly Script -->
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 

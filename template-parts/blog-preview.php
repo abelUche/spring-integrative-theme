@@ -4,31 +4,38 @@
 
 <div class="blog-intro">
 
-<h2>Guidance for the Menopause Journey</h2>
+<?php if(get_field('blog_title')): ?>
+<h2><?php the_field('blog_title'); ?></h2>
+<?php endif; ?>
 
+<?php if(get_field('blog_subtitle')): ?>
 <p class="blog-sub">
-Articles on hormones, boundaries, embodiment,
-and the sacred intelligence of the female body.
+  <?php the_field('blog_subtitle'); ?>
 </p>
+<?php endif; ?>
 
+<?php if(get_field('blog_description')): ?>
 <p class="blog-desc">
-Explore reflections and education on spiritual menopause,
-mindset medicine, hormone testing, and practical tools
-to support your transition with clarity and compassion.
+  <?php the_field('blog_description'); ?>
 </p>
+<?php endif; ?>
 
 </div>
 
 
-<h3 class="blog-heading">Recent Blog Posts</h3>
+<?php if(get_field('blog_heading')): ?>
+<h3 class="blog-heading">
+  <?php the_field('blog_heading'); ?>
+</h3>
+<?php endif; ?>
 
 
 <div class="blog-grid">
 
 <?php
 $args = array(
-'post_type' => 'post',
-'posts_per_page' => 3
+  'post_type' => 'post',
+  'posts_per_page' => 3
 );
 
 $query = new WP_Query($args);
@@ -44,7 +51,7 @@ $query->the_post();
 
 <div class="blog-image">
 <?php if(has_post_thumbnail()) {
-the_post_thumbnail('blog-thumb');
+  the_post_thumbnail('blog-thumb');
 } ?>
 </div>
 
@@ -65,8 +72,12 @@ endif;
 
 <div class="blog-cta">
 
-<a href="<?php echo get_permalink(get_option('page_for_posts')); ?>" class="btn-primary">
-READ THE BLOG
+<?php 
+$cta_link = get_field('blog_button_link') ?: get_permalink(get_option('page_for_posts'));
+?>
+
+<a href="<?php echo esc_url($cta_link); ?>" class="btn-primary">
+  <?php echo get_field('blog_button_text') ?: 'Read the Blog'; ?>
 </a>
 
 </div>

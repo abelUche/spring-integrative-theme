@@ -2,25 +2,57 @@
 
 <div class="container">
 
+<?php if(get_field('instagram_title')): ?>
 <h2 class="instagram-title">
-Ongoing Reflections & Real-Life Wisdom
+  <?php the_field('instagram_title'); ?>
 </h2>
+<?php endif; ?>
 
 <p class="instagram-sub">
-Stay connected beyond the session.
+
+<?php if(get_field('instagram_badge_text')): ?>
+  <span class="highlight-circle">
+    <?php the_field('instagram_badge_text'); ?>
+  </span>
+<?php endif; ?>
+
+<?php if(get_field('instagram_subtitle')): ?>
+  <?php the_field('instagram_subtitle'); ?>
+<?php endif; ?>
+
 </p>
+
+<p class="instagram-desc">
+
+<?php if(get_field('instagram_subtitle_1')): ?>
+  <?php the_field('instagram_subtitle_1'); ?>
+<?php endif; ?>
+
+</p>
+
 
 <div class="instagram-grid">
 
-<?php echo do_shortcode('[instagram-feed]'); ?>
+<?php 
+$shortcode = get_field('instagram_shortcode') ?: '[instagram-feed]';
+echo do_shortcode($shortcode);
+?>
 
 </div>
 
+
 <div class="instagram-cta">
 
-<a href="https://instagram.com" target="_blank" class="btn-primary">
-FOLLOW ON INSTAGRAM
+<?php 
+$link = get_field('instagram_button_link');
+$text = get_field('instagram_button_text') ?: 'Follow on Instagram';
+?>
+
+<?php if($link): ?>
+<a href="<?php echo esc_url($link); ?>" target="_blank" class="btn-primary">
+  <?php echo esc_html($text); ?>
 </a>
+<?php endif; ?>
 
 </div>
 
